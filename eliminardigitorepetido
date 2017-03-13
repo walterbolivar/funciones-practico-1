@@ -1,0 +1,45 @@
+#include <iostream>
+#include <conio.h>
+ using namespace std;
+
+  int repeticion (int n, int aux){	// Función Auxiliar
+	int i=0;
+	while (n>0){
+		if (n%10==aux){
+			i++;
+		}
+		n=n/10;
+	}
+	return (i);
+}
+  int invertir (int n){
+	int p,aux;
+		while(n>0){
+			p=n%10;
+	        n=n/10;
+			aux=(aux*10)+p;
+		}
+		return(aux);
+}
+int eliminarepetidos (int n){
+	int i, aux, s=0;
+	n=invertir(n);
+	aux=n;
+	while (n>0){
+		i=repeticion(aux,n%10);
+		if (i==1){
+			s=s*10+n%10;
+		}
+		n=n/10;
+	}
+	return (s);
+}
+
+
+
+void main(){
+	int n;
+		cout<<"introducir digito\n";
+	    cin>>n;
+		cout<<"el numero es---->"<< eliminarepetidos (n);
+		getch();}
