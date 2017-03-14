@@ -1,0 +1,34 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std ;
+
+int invertirnum(int n){
+	int m=0,p;
+	while(n>0){
+		p=n%10;	
+	m=(m*10)+p;
+	n=n/10;
+	}return(m);
+}
+
+
+
+void serie(int n){
+	int k,r;
+		for(int i=1;i<=n;i++){
+			r=invertirnum(i*i);
+			cout<<r<<" ";
+			
+		}
+}
+
+
+
+
+void main(){
+	int n;
+	cin>>n;
+	serie(n);
+		getch();
+}
